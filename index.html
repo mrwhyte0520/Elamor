@@ -13,48 +13,62 @@
   <main class="app" aria-live="polite">
     <section class="screen" id="screen-letter" data-active="true">
       <div class="card">
-        <header class="card__header">
-          <div class="badge" id="date-badge">Presioname</div>
-          <h1 class="title">Para el amor de mi vida</h1>
-          <p class="subtitle">La luz de mi vida.</p>
-        </header>
+        <div class="card__layout">
+          <div class="card__left">
+            <header class="card__header">
+              <div class="badge" id="date-badge">Presioname</div>
+              <h1 class="title">Para el amor de mi vida</h1>
+              <p class="subtitle">La luz de mi vida.</p>
+            </header>
 
-        <div class="envelope" aria-hidden="true">
-          <img class="envelope__photo" src="mg1.jpeg" alt="" loading="lazy" />
-          <div class="envelope__shade"></div>
-          <div class="envelope__top"></div>
-          <div class="envelope__paper"></div>
-        </div>
+            
 
-        <div class="letter" id="letter" hidden>
-          <p>
-            Hola <span class="name-highlight">Reina</span>,
-          </p>
-          <div class="love-note" role="note">
-            <span class="love-note__typed" id="love-typed"></span><span class="love-note__cursor" aria-hidden="true"></span>
-            <span class="love-note__rotator" id="love-rotator" aria-hidden="true"></span>
+            <div class="letter" id="letter" hidden>
+              <p>
+                Hola <span class="name-highlight">Rey</span>,
+              </p>
+              <div class="love-note" role="note">
+                <span class="love-note__typed" id="love-typed"></span><span class="love-note__cursor" aria-hidden="true"></span>
+                <span class="love-note__rotator" id="love-rotator" aria-hidden="true"></span>
+              </div>
+
+              <form class="unlock" id="unlock-form" autocomplete="off">
+                <label class="field">
+                  <span class="field__label"> Recuerda que te amo y siempre estare para ti.</span>
+                  <div class="field__row">
+                    <input class="field__input" id="unlock-name" type="password" inputmode="text" placeholder="Tu clave" required />
+                    <button class="btn btn--ghost btn--icon" type="button" id="btn-toggle-visibility" aria-label="Mostrar u ocultar clave" title="Mostrar/ocultar">Mostrar</button>
+                  </div>
+                </label>
+
+                <div class="unlock__actions">
+                  <button class="btn btn--primary" type="submit">Entrar</button>
+                  <button class="btn btn--ghost" type="button" id="btn-reset">Reiniciar</button>
+                </div>
+
+                <p class="hint" id="unlock-hint" role="status" aria-live="polite"></p>
+              </form>
+            </div>
           </div>
 
-          <form class="unlock" id="unlock-form" autocomplete="off">
-            <label class="field">
-              <span class="field__label"> Recuerda que te amo y siempre estare para ti.</span>
-              <div class="field__row">
-                <input class="field__input" id="unlock-name" type="password" inputmode="text" placeholder="Tu clave" required />
-                <button class="btn btn--ghost btn--icon" type="button" id="btn-toggle-visibility" aria-label="Mostrar u ocultar clave" title="Mostrar/ocultar">Mostrar</button>
-              </div>
-            </label>
-
-            <div class="unlock__actions">
-              <button class="btn btn--primary" type="submit">Entrar</button>
-              <button class="btn btn--ghost" type="button" id="btn-reset">Reiniciar</button>
+          <div class="card__right">
+            <div class="envelope" aria-hidden="true">
+              <img class="envelope__photo" src="mg1.jpeg" alt="" loading="lazy" />
+              <div class="envelope__shade"></div>
+              <div class="envelope__top"></div>
+              <div class="envelope__paper"></div>
             </div>
 
-            <p class="hint" id="unlock-hint" role="status" aria-live="polite"></p>
-          </form>
-        </div>
+            
 
-        <div class="actions">
-          <button class="btn btn--primary" id="btn-open">Abrir carta</button>
+            <div class="love-anim" aria-hidden="true">
+              <div class="love-anim__heart" aria-hidden="true">
+                <span class="love-anim__half love-anim__half--left"></span>
+                <span class="love-anim__half love-anim__half--right"></span>
+                <span class="love-anim__shine"></span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -69,6 +83,7 @@
       </div>
 
       <article class="reveal__paper" role="document">
+        <button class="reveal__close" type="button" id="btn-reveal-close" aria-label="Cerrar" title="Cerrar">✕</button>
         <div class="reveal__paper-inner readable" id="reveal-message">
           Ahora si, a lo que vinimos…
           

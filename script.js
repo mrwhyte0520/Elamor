@@ -27,6 +27,7 @@ const btnConfirmNo = document.getElementById("btn-confirm-no");
 
 const reveal = document.getElementById("reveal");
 const btnRevealContinue = document.getElementById("btn-reveal-continue");
+const btnRevealClose = document.getElementById("btn-reveal-close");
 
 const dateBadge = document.getElementById("date-badge");
 const dateModal = document.getElementById("date-modal");
@@ -61,106 +62,8 @@ function startLoveNoteAnimation(){
   typeTick();
 
   const loveWords = [
-    "mi amor",
-    "mi vida",
-    "mi rubia",
-    "mi bombom",
-    "mi princesa",
-    "mi reina",
-    "mi cielo",
-    "mi corazon",
-    "mi tesoro",
-    "mi todo",
-    "mi mundo",
-    "mi alegria",
-    "mi paz",
-    "mi luz",
-    "mi sonrisa",
-    "mi lugar seguro",
-    "mi milagro",
-    "mi bendicion",
-    "mi buena noticia",
-    "mi destino bonito",
-    "mi persona favorita",
-    "mi compañera",
-    "mi novia linda",
-    "mi esposa en oracion",
-    "mi mejor decision",
-    "mi mejor parte",
-    "mi debilidad",
-    "mi fortaleza",
-    "mi sueño",
-    "mi motor",
-    "mi inspiración",
-    "mi motivacion",
-    "mi consentida",
-    "mi chiquita",
-    "mi bonita",
-    "mi preciosa",
-    "mi hermosa",
-    "mi divina",
-    "mi niña",
-    "mi nena",
-    "mi bebita",
-    "mi muñequita",
-    "mi encanto",
-    "mi magia",
-    "mi corazoncito",
-    "mi lucerito",
-    "mi estrellita",
-    "mi sol",
-    "mi lunita",
-    "mi universo",
-    "mi galaxia",
-    "mi primavera",
-    "mi flor",
-    "mi rosa",
-    "mi tulipan",
-    "mi mar",
-    "mi calma",
-    "mi hogar",
-    "mi refugio",
-    "mi anhelo",
-    "mi deseo",
-    "mi razón",
-    "mi motivo",
-    "mi esperanza",
-    "mi fe",
-    "mi promesa",
-    "mi futuro",
-    "mi para siempre",
-    "mi eternidad",
-    "mi valentia",
-    "mi dulzura",
-    "mi ternura",
-    "mi encanto hermoso",
-    "mi amorcito",
-    "mi vidita",
-    "mi cielito",
-    "mi angel",
-    "mi angelito",
-    "mi joya",
-    "mi diamante",
-    "mi tesorito",
-    "mi regalo",
-    "mi regalo de Dios",
-    "mi compañerita",
-    "mi confidente",
-    "mi mejor amiga",
-    "mi pareja",
-    "mi complemento",
-    "mi mitad",
-    "mi coincidencia bonita",
-    "mi casualidad perfecta",
-    "mi oración contestada",
-    "mi victoria",
-    "mi orgullo",
-    "mi admiracion",
-    "mi inspiración diaria",
-    "mi emoción",
-    "mi cancion favorita",
-    "mi poema",
-    "mi historia",
+    "mi rey",
+    "mi príncipe",
     "mi amor de la vida",
   ];
 
@@ -413,6 +316,10 @@ unlockForm?.addEventListener("submit", (e) => {
 });
 
 btnRevealContinue?.addEventListener("click", () => {
+  closeReveal();
+});
+
+btnRevealClose?.addEventListener("click", () => {
   closeReveal();
 });
 
