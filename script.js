@@ -37,6 +37,9 @@ const loveTyped = document.getElementById("love-typed");
 const loveRotator = document.getElementById("love-rotator");
 const bgAudio = document.getElementById("bg-audio");
 
+const envelope = document.querySelector(".envelope");
+const loveAnim = document.querySelector(".love-anim");
+
 const STORAGE_LETTER_OPEN = "valentine_letter_open";
 
 let loveTypingStarted = false;
@@ -204,6 +207,15 @@ function spawnFx(kind, count, originEl){
 btnOpen?.addEventListener("click", () => {
   openConfirmModal();
 });
+
+function openFromAnywhere(){
+  if(confirmModal && !confirmModal.hidden) return;
+  if(reveal && !reveal.hidden) return;
+  openConfirmModal();
+}
+
+envelope?.addEventListener("click", openFromAnywhere);
+loveAnim?.addEventListener("click", openFromAnywhere);
 
 btnConfirmYes?.addEventListener("click", () => {
   closeConfirmModal();
