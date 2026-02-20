@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El amor de mi vida</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app" aria-live="polite">
+    <section class="screen" id="screen-letter" data-active="true">
+      <div class="card">
+        <header class="card__header">
+          <div class="badge" id="date-badge">Presioname</div>
+          <h1 class="title">Para el amor de mi vida</h1>
+          <p class="subtitle">La luz de mi vida.</p>
+        </header>
+
+        <div class="envelope" aria-hidden="true">
+          <img class="envelope__photo" src="mg1.jpeg" alt="" loading="lazy" />
+          <div class="envelope__shade"></div>
+          <div class="envelope__top"></div>
+          <div class="envelope__paper"></div>
+        </div>
+
+        <div class="letter" id="letter" hidden>
+          <p>
+            Hola <span class="name-highlight">Reina</span>,
+          </p>
+          <div class="love-note" role="note">
+            <span class="love-note__typed" id="love-typed"></span><span class="love-note__cursor" aria-hidden="true"></span>
+            <span class="love-note__rotator" id="love-rotator" aria-hidden="true"></span>
+          </div>
+
+          <form class="unlock" id="unlock-form" autocomplete="off">
+            <label class="field">
+              <span class="field__label"> Recuerda que te amo y siempre estare para ti.</span>
+              <div class="field__row">
+                <input class="field__input" id="unlock-name" type="password" inputmode="text" placeholder="Tu clave" required />
+                <button class="btn btn--ghost btn--icon" type="button" id="btn-toggle-visibility" aria-label="Mostrar u ocultar clave" title="Mostrar/ocultar">Mostrar</button>
+              </div>
+            </label>
+
+            <div class="unlock__actions">
+              <button class="btn btn--primary" type="submit">Entrar</button>
+              <button class="btn btn--ghost" type="button" id="btn-reset">Reiniciar</button>
+            </div>
+
+            <p class="hint" id="unlock-hint" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn--primary" id="btn-open">Abrir carta</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="reveal" id="reveal" hidden>
+    <div class="reveal__overlay"></div>
+    <div class="reveal__stage" role="dialog" aria-modal="true" aria-label="Carta">
+      <div class="reveal__envelope" aria-hidden="true">
+        <div class="reveal__env-top"></div>
+        <div class="reveal__env-body"></div>
+      </div>
+
+      <article class="reveal__paper" role="document">
+        <div class="reveal__paper-inner readable" id="reveal-message">
+          Ahora si, a lo que vinimos…
+          
+          Gracias por llegar a mi vida y convertirte en mi compañero de vida. Hoy cumplimos 5 años juntos, y en estos cinco años hemos construido algo tan hermoso: nuestra chiquita, tan hermosa como tu.
+
+          Y sabes que es lo mas lindo? Que tiene un padre atento, carinoso y esplendido. Un hombre que cada dia me demuestra que puede ser mejor, que crece, que lucha y que ama de verdad… y eso me enamora mas y mas de ti.
+
+          Cuando te sientas triste o tengas un mal dia, entra y lee esto. Recuerda lo valioso que eres, el gran hombre que eres y cuanto te amamos.
+
+          Gracias por estos 5 años maravillosos. Si tuviera que elegir de nuevo, te elegiria a ti una y mil veces mas. Porque contigo quiero seguir construyendo sueños, viendo crecer a nuestra princesa y celebrando muchos años mas de amor. Te amo hoy, mañana y siempre.
+
+          Con todo mi amor,
+          El amor de tu vida.
+        </div>
+        <div class="reveal__actions">
+          <button class="btn btn--primary" type="button" id="btn-reveal-continue">Cerrar</button>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="modal" id="confirm-modal" role="dialog" aria-modal="true" aria-labelledby="confirm-modal-title" hidden>
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__dialog card" role="document">
+      <header class="card__header">
+        <div class="badge">Un mensajito</div>
+        <h3 class="title" id="confirm-modal-title">Antes de abrir la carta</h3>
+        <p class="subtitle">Te llegó un mensajito. ¿Quieres verlo?</p>
+      </header>
+      <div class="modal__actions">
+        <button class="btn btn--ghost" type="button" id="btn-confirm-no">Aún no</button>
+        <button class="btn btn--primary" type="button" id="btn-confirm-yes">Sí, abrir</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="date-modal" role="dialog" aria-modal="true" aria-labelledby="date-modal-title" hidden>
+    <div class="modal__overlay" data-date-modal-close></div>
+    <div class="modal__dialog card" role="document">
+      <header class="card__header">
+        <div class="badge">Para ti</div>
+        <h3 class="title" id="date-modal-title">Un recordatorio</h3>
+        <p class="subtitle">Mi amor, contigo he entendido que el amor no es solo una palabra bonita, sino una sensación que se siente en el pecho y te cambia el día completo. Me gusta tu forma de ser, tu sonrisa, y hasta la manera en que haces simples momentos convertirse en recuerdos especiales. No sé qué hice para merecerte, pero agradezco cada instante a tu lado.</p>
+      </header>
+      <div class="modal__actions">
+        <button class="btn btn--primary" type="button" id="btn-date-modal-ok">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="fx-layer" id="fx-layer" aria-hidden="true"></div>
+
+  <audio id="bg-audio" src="vite.mp3" loop></audio>
+  <script src="script.js"></script>
+</body>
+</html>
